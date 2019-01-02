@@ -1,0 +1,26 @@
+﻿@model pwdExposed.ViewModels.CheckAccountViewModel
+
+<div class="row frontHeading">
+    <div class="col-12">
+        <h3 class="display-4">Are you exposed? <i class="fa fa-spinner"></i></h3>
+        <p class="lead">Verify that your password or private information is not leaked in a data breach.</p>
+    </div>
+</div>
+
+<div class="row frontSearch">
+    <div class="col-12">
+        <form asp-controller="DataBreach" asp-action="MyBreachedAccounts" method="post" class="form-group" role="form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="input-group input-group-lg">
+                <input asp-for="@Model.account" class="form-control" placeholder="Email or username" type="text" id="account" name="account" value="" />
+
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="submit" id="searchHIBP"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+
+        </form>
+        <p class="lead">Service is provided using the <a href="https://haveibeenpwned.com">HIBP</a> API by <a href="https://www.troyhunt.com/">Troy Hunt</a></p>
+        <p class="font-italic smaller">Your IP: @ViewData["IPAddress"]</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Error"];
+    ViewData["Heading"] = Localizer["OUCH!"];
+    ViewData["Sorry"] = Localizer["Sorry the page you are looking for does not exist."];
+    ViewData["Information"] = Localizer["Try exploring the site using the navigation bar on the top."];
+}
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <h1 class="brand-heading" style="color:#42dca3">@ViewData["Heading"]</h1>
+
+                    <div class="logo light">
+                        <h1>@ViewData["Sorry"]</h1>
+                        <h4>@ViewData["Information"]</h4>                       
+                    </div>
+
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

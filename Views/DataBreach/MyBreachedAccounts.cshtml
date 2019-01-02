@@ -1,0 +1,74 @@
+﻿@model IEnumerable<pwdExposed.ViewModels.DataBreachViewModel>
+@using Microsoft.AspNetCore.Html;
+
+@{ if (Model != null) {
+
+        <div class="row">
+            <div class="col-12 breach">
+                <h1 class="display-4">Breach found</h1>
+                <p>Private information related to '@ViewData["Account"]' is disclosed in @Model.Count() breach(es) listed below. </p>
+            </div>
+        </div>
+
+
+        @foreach (var item in Model) {
+            var html = new HtmlString(item.Description);
+
+            <div class="row" style="padding-top:20px">
+
+                <div class="col-md-2">
+                    <h3>@item.Title</h3>
+                </div>
+
+                <div class="col-md-8" style="text-align:left">
+                    <b>@item.Title:</b> @html<br>
+                    <small>
+                        <b>Breached data:</b>
+
+                      @foreach (var dataclass in item.DataClasses)
+                    {
+                            <span class="badge badge-warning">@dataclass.ToString()</span>
+                    }
+                   
+                        <b>Reported:</b> @item.BreachDate.ToString("MMM d, yyyy") <b>Added to HIBP:</b> @item.AddedDate.ToString("MMM d, yyyy")
+                   </small>
+
+                </div>
+
+                <div class="col-md-2">
+                    <small>@item.PwnCount breached accounts</small>
+                </div>
+
+                <br>
+            </div>
+            <br>
+
+        }
+
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-12 nobreach">
+                <h1 class="display-4">No breach found</h1>
+                <p>It seems like your privacy has not been compromised for now ;-)</p>
+            </div>
+        </div>
+        <br>
+        <br>
+    }
+}
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- breachlist -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3270729169816613"
+     data-ad-slot="7514534657"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

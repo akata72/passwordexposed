@@ -1,0 +1,69 @@
+﻿@model IEnumerable<pwdExposed.ViewModels.DataBreachViewModel>
+
+@{ if (Model != null)
+    {
+        <div class="row">
+            <div class="col-md-12 secondaryHeader">
+                <h3 class="display-4">@ViewData["Title"]</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <table class="table table-striped table-border" id="breach_table" cellspacing="0">
+                <thead>
+                    <tr role="row">
+                        <th>Name</th>
+                        <th>PwnCount</th>
+                        <th>BreachDate</th>
+                        <th>AddedDate</th>
+                        <th>Verified</th>
+                        <th>Fabricated</th>
+                        <th>Sensitive</th>
+                        <th>Retired</th>
+                        <th>SpamList</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @{ foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.PwnCount</td>
+                                <td>@item.BreachDate.ToString("MMM d, yyyy")</td>
+                                <td>@item.AddedDate.ToString("MMM d, yyyy")</td>
+                                <td>@item.IsVerified</td>
+                                <td>@item.IsFabricated</td>
+                                <td>@item.IsSensitive</td>
+                                <td>@item.IsRetired</td>
+                                <td>@item.IsSpamList</td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody> <!-- /. tbody-->
+            </table>
+        </div> <!-- Row -->
+
+    }}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#breach_table').DataTable();
+    });
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- breachlist -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3270729169816613"
+     data-ad-slot="7514534657"
+     data-ad-format="auto"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

@@ -1,0 +1,114 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewData["Title"]</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="google-site-verification" content="-M_rgD_rBApkWceKMq4BrI9JBaWRZz9ENw294oOZlHc" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="VelocityNetworks" />
+    <meta name="description=" content="@ViewData["Description"]">
+    <meta property="og:description" content="Password exposed will tell you if your password or other private information (i.e passwords) are leaked or otherwise exposed in a data breach.">
+    <meta name="keywords" content="Leaked Password, Data Breach, Compromised Password, Exposed Password, Privacy">
+
+    <!-- TBD -->
+    <link rel="Copyright" title="Copyright VelocityNetworks" href="/copyright/" />
+    <link rel="Help" title="Hjelp" href="/help/" />
+    <link rel="Search" title="Søk" href="/search/" />
+    <link rel="canonical" href="/" />
+
+    <environment names="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="false" />
+    </environment>
+
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/"><i class="fa fa-bullseye"></i> pwdExposed</a>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home"></i></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarArticlesMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Articles
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarArticlesMenu">
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PasswordGuidelines">Password Guidelines</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="List_Of_Breaches">Data Breaches</a>
+                    </div>
+
+                </li>
+
+                <li class="nav-item pull-right">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                </li>
+
+                <environment names="Development">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarToolsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarToolsMenu">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Breaches">Breaches</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Passwords">Passwords</a>
+                            <a class="dropdown-item" asp-controller="Tool" asp-action="Index">Password Generator</a>
+                            <a class="dropdown-item" asp-controller="Tool" asp-action="Index">BASE64</a>
+                            <a class="dropdown-item" asp-controller="Tool" asp-action="ReverseEngineerMD5">MD5 Reverse</a>
+                        </div>
+                    </li>
+                </environment>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <footer>
+            <div class="container text-center">
+
+                <p><i class="fa fa-copyright"></i> 2017 - A .NET Core Project</p>
+                <p>
+                    <a href="https://www.facebook.com/thomas.aure"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a href="https://twitter.com/thomas_aure"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    <a href="https://plus.google.com/+ThomasAure"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                </p>
+            </div>
+        </footer>
+    </div>
+       
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-104397937-1', 'auto');
+    ga('send', 'pageview');
+</script>

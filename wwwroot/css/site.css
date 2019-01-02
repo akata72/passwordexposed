@@ -1,0 +1,94 @@
+﻿/* Basics and overrides */
+
+html,
+body {
+    height: 100%;
+    background-color: #333; /* Dark */
+}
+
+body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 10px;
+    padding-right: 10px;   
+}
+
+/* Global app styles */
+.frontHeading {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: darkslateblue;
+}
+
+.frontSearch {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: darkslateblue;
+    text-align: center;
+ 
+}
+
+.frontContent {
+    padding: 5px 5px 5px 5px;
+}
+
+.secondaryHeader {
+    padding: 15px 50px 15px 50px;
+    background-color: darkmagenta;
+}
+
+
+/* Breach result pages */
+.breach {
+    padding: 20px 50px 20px 50px;
+    background-color: red;
+}
+
+.nobreach {
+    padding: 20px 50px 20px 50px;
+    background-color: green;
+}
+
+
+/* Padding for spacing */
+.inner {
+    padding: 1rem;
+}
+
+/* Cover */
+.cover {
+    padding: 0 1.0rem;
+}
+
+    .cover .btn-lg {
+        padding: .75rem 1.25rem;
+        font-weight: bold;
+    }
+
+
+/* Set widths on the form inputs since otherwise they're 100% wide 
+input,
+select,
+textarea {
+   max-width: 400px; 
+}*/
