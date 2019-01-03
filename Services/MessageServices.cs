@@ -30,7 +30,6 @@ namespace pwdExposed.Services
 
         public async Task SendEmailAsync(string email, string subject, string message)
         {
-            //pwdExposedFullAccessKey: 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
             var emailMessage = new SendGridMessage()
             {
                 From = new EmailAddress(_optionsMail.Value.SmtpFromAddress, _optionsMail.Value.SmtpFromName),
@@ -43,8 +42,8 @@ namespace pwdExposed.Services
             _logger.LogInformation("### SendGridMessage: Creating e-mail object to be sent to {0} from {1}.", email, emailMessage.From.Email);
             //_logger.LogInformation("### SendGridUser is {0} and SendGridKey is {1}.", _optionsMail.Value.SendGridUser, _optionsMail.Value.SendGridKey);
 
-            var apiKey = "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"; // to appsettings.
-            //var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
+            // to appsettings??
+            var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
 
             _logger.LogInformation("### SendGrid API Key: {0}", apiKey);
 
